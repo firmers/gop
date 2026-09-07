@@ -1,0 +1,31 @@
+[package]
+name = "mesh"
+version = "0.0.1"
+authors = ["coyzeng <coyzeng@gmail.com>"]
+edition = "2018"
+keywords = ["SOA", "ServiceMesh"]
+homepage = "https://github.com/firmers/mesh"
+repository = "https://github.com/firmers/mesh"
+license = "Apache-2.0"
+categories = ["network-programming"]
+readme = "README.md"
+exclude = ["tests"]
+
+[dependencies]
+mesh-derive = { version = "0.0.1", path = "mesh-derive" }
+mesh-macro = { version = "0.0.1", path = "mesh-macro" }
+log = "0.4"
+async-trait = "0.1.74"
+tonic = { version = "0.11.0", features = ["gzip"] }
+libc = "0.2.151"
+serde_json = "1.0.108"
+serde = { version = "1.0.193", features = ["alloc", "derive", "serde_derive", "rc"] }
+http = "1.0.0"
+tokio = "1.35.0"
+log4rs = "1.2.0"
+hyper = { version = "1.1.0", features = [] }
+tower = "0.4.13"
+h2 = { version = "0.4.2", features = ["stream"] }
+tower-service = "0.3.2"
+bytes = "1.6.0"
+async-std = { version = "1.12.0", features = ["async-attributes", "async-process", "attributes", "futures-core"] }

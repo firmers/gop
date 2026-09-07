@@ -1,0 +1,22 @@
+# Read about `build.yaml` at https://pub.dev/packages/build_config
+builders:
+  maas:
+    import: "package:maas/dyn/dyn.dart"
+    builder_factories: [ "dyn" ]
+    build_extensions: { ".dart": [ "maas.g.dart" ] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: [ "source_gen|combining_builder" ]
+targets:
+  $default:
+    builders:
+      maas:
+        enabled: true
+        options:
+          debug: true
+          log_level: fine
+      source_gen|combining_builder:
+        enabled: true
+        options:
+          debug: true
+          log_level: fine

@@ -1,0 +1,50 @@
+{
+  "name": "@firmer/gop",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "gop",
+  "repository": "github.com/firmers/gop",
+  "author": "coyzeng@gmail.com",
+  "maintainers": [
+    "coyzeng@gmail.com"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/gop.js",
+  "module": "./dist/gop.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/gop.d.ts",
+      "import": "./dist/gop.js",
+      "require": "./dist/gop.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "@firmer/mesh": "^0.0.16",
+    "react": "^19.2.4"
+  },
+  "devDependencies": {
+    "@firmer/mesh": "^0.0.16",
+    "@firmer/tsc": "^0.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.4",
+    "rollup": "^4.59.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.1.0"
+  },
+  "packageManager": "yarn@4.17.1"
+}
