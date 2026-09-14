@@ -1,17 +1,8 @@
 /*
  * Copyright (c) 2019, 2026, firmer.tech and/or its affiliates. All rights reserved.
+ * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 package mpi
@@ -83,6 +74,13 @@ type MsgMan interface {
 	//	@i input 通道信息
 	// @MPI("gop.push.admin.channel.save")
 	SaveChannel(ctx context.Context, input *kinds.PushChannel) error
+
+	// SetChannelState enables or disables a provider without replacing its configuration or credentials.
+	//	启用或禁用服务商，仅更新状态及审计信息，不替换配置或凭据。
+	//	@i ctx Invocation context 调用上下文
+	//	@i input Channel ID, matching app ID, enabled flag and operation reason 通道ID、所属应用ID、启用标志及操作原因
+	// @MPI("gop.push.admin.channel.state")
+	SetChannelState(ctx context.Context, input *kinds.PushChannelState) error
 
 	// TestChannel sends a channel test notification.
 	//	发送通道测试通知.
@@ -326,6 +324,13 @@ type MsgMan interface {
 	//	@o draft 总线草稿
 	// @MPI("gop.push.bus.admin.draft.save")
 	SaveDraft(ctx context.Context, input *kinds.PushBusDraftSave) (*kinds.PushBusVersion, error)
+
+	// GenerateDraft generates and saves the initial graph for an empty push bus draft.
+	//	为空草稿生成并保存初始总线编排.
+	//	@i input 当前总线和草稿版本
+	//	@o draft 生成后的草稿
+	// @MPI("gop.push.bus.admin.draft.generate")
+	GenerateDraft(ctx context.Context, input *kinds.PushBusDraftRequest) (*kinds.PushBusVersion, error)
 
 	// ValidateDraft validates a push bus draft.
 	//	校验推送总线草稿.

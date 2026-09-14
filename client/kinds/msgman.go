@@ -1,17 +1,8 @@
 /*
  * Copyright (c) 2019, 2026, firmer.tech and/or its affiliates. All rights reserved.
+ * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 package kinds
@@ -85,28 +76,29 @@ type PushApp struct {
 }
 
 type PushChannel struct {
-	Id            string     `index:"1" json:"id" xml:"id" yaml:"id" comment:"通道ID"`
-	AppId         string     `index:"2" json:"app_id" xml:"app_id" yaml:"app_id" comment:"应用ID"`
-	AppName       string     `index:"3" json:"app_name" xml:"app_name" yaml:"app_name" comment:"应用名称"`
-	Code          string     `index:"4" json:"code" xml:"code" yaml:"code" comment:"通道编码"`
-	Name          string     `index:"5" json:"name" xml:"name" yaml:"name" comment:"通道名称"`
-	Platform      string     `index:"6" json:"platform" xml:"platform" yaml:"platform" comment:"平台"`
-	Provider      string     `index:"7" json:"provider" xml:"provider" yaml:"provider" comment:"服务商"`
-	Environment   string     `index:"8" json:"environment" xml:"environment" yaml:"environment" comment:"环境"`
-	Region        string     `index:"9" json:"region" xml:"region" yaml:"region" comment:"地域"`
-	Endpoint      string     `index:"10" json:"endpoint" xml:"endpoint" yaml:"endpoint" comment:"端点"`
-	Config        string     `index:"11" json:"config" xml:"config" yaml:"config" comment:"通道配置JSON"`
-	Capabilities  string     `index:"12" json:"capabilities" xml:"capabilities" yaml:"capabilities" comment:"能力JSON"`
-	QuotaPolicyId string     `index:"13" json:"quota_policy_id" xml:"quota_policy_id" yaml:"quota_policy_id" comment:"配额策略ID"`
-	RoutePolicyId string     `index:"14" json:"route_policy_id" xml:"route_policy_id" yaml:"route_policy_id" comment:"路由策略ID"`
-	Memo          string     `index:"15" json:"memo" xml:"memo" yaml:"memo" comment:"备注"`
-	State         string     `index:"16" json:"state" xml:"state" yaml:"state" comment:"状态文本"`
-	Status        int64      `index:"17" json:"status" xml:"status" yaml:"status" comment:"状态"`
-	LastHealthAt  types.Time `index:"18" json:"last_health_at" xml:"last_health_at" yaml:"last_health_at" comment:"最近健康检查时间"`
-	CreateAt      types.Time `index:"19" json:"create_at" xml:"create_at" yaml:"create_at" comment:"创建时间"`
-	UpdateAt      types.Time `index:"20" json:"update_at" xml:"update_at" yaml:"update_at" comment:"更新时间"`
-	CreateBy      string     `index:"21" json:"create_by" xml:"create_by" yaml:"create_by" comment:"创建人"`
-	UpdateBy      string     `index:"22" json:"update_by" xml:"update_by" yaml:"update_by" comment:"更新人"`
+	Id            string              `index:"1" json:"id" xml:"id" yaml:"id" comment:"通道ID"`
+	AppId         string              `index:"2" json:"app_id" xml:"app_id" yaml:"app_id" comment:"应用ID"`
+	AppName       string              `index:"3" json:"app_name" xml:"app_name" yaml:"app_name" comment:"应用名称"`
+	Code          string              `index:"4" json:"code" xml:"code" yaml:"code" comment:"通道编码"`
+	Name          string              `index:"5" json:"name" xml:"name" yaml:"name" comment:"通道名称"`
+	Platform      string              `index:"6" json:"platform" xml:"platform" yaml:"platform" comment:"平台"`
+	Provider      string              `index:"7" json:"provider" xml:"provider" yaml:"provider" comment:"服务商"`
+	Environment   string              `index:"8" json:"environment" xml:"environment" yaml:"environment" comment:"环境"`
+	Region        string              `index:"9" json:"region" xml:"region" yaml:"region" comment:"地域"`
+	Endpoint      string              `index:"10" json:"endpoint" xml:"endpoint" yaml:"endpoint" comment:"端点"`
+	Config        string              `index:"11" json:"config" xml:"config" yaml:"config" comment:"通道配置JSON"`
+	Capabilities  string              `index:"12" json:"capabilities" xml:"capabilities" yaml:"capabilities" comment:"能力JSON"`
+	QuotaPolicyId string              `index:"13" json:"quota_policy_id" xml:"quota_policy_id" yaml:"quota_policy_id" comment:"配额策略ID"`
+	RoutePolicyId string              `index:"14" json:"route_policy_id" xml:"route_policy_id" yaml:"route_policy_id" comment:"路由策略ID"`
+	Memo          string              `index:"15" json:"memo" xml:"memo" yaml:"memo" comment:"备注"`
+	State         string              `index:"16" json:"state" xml:"state" yaml:"state" comment:"状态文本"`
+	Status        int64               `index:"17" json:"status" xml:"status" yaml:"status" comment:"状态"`
+	LastHealthAt  types.Time          `index:"18" json:"last_health_at" xml:"last_health_at" yaml:"last_health_at" comment:"最近健康检查时间"`
+	Credentials   *PushProviderConfig `index:"23" json:"credentials" xml:"credentials" yaml:"credentials" comment:"通用供应商配置，空值兼容旧配置"`
+	CreateAt      types.Time          `index:"19" json:"create_at" xml:"create_at" yaml:"create_at" comment:"创建时间"`
+	UpdateAt      types.Time          `index:"20" json:"update_at" xml:"update_at" yaml:"update_at" comment:"更新时间"`
+	CreateBy      string              `index:"21" json:"create_by" xml:"create_by" yaml:"create_by" comment:"创建人"`
+	UpdateBy      string              `index:"22" json:"update_by" xml:"update_by" yaml:"update_by" comment:"更新人"`
 }
 
 type PushChannelTest struct {
@@ -153,6 +145,7 @@ type PushTemplate struct {
 	UpdateAt      types.Time `index:"15" json:"update_at" xml:"update_at" yaml:"update_at" comment:"更新时间"`
 	CreateBy      string     `index:"16" json:"create_by" xml:"create_by" yaml:"create_by" comment:"创建人"`
 	UpdateBy      string     `index:"17" json:"update_by" xml:"update_by" yaml:"update_by" comment:"更新人"`
+	Provider      string     `index:"18" json:"provider" xml:"provider" yaml:"provider" comment:"渠道类型"`
 }
 
 type PushPublishRequest struct {

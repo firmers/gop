@@ -1,17 +1,6 @@
 /*
  * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
 package mpi
@@ -46,7 +35,7 @@ type MsgBus interface {
 
 	// Index retrieves a page of business push requests visible to the caller.
 	//	分页检索当前业务调用方可见的推送请求，按业务请求计数，不返回内部通知、通道或执行审计。
-	//	@i idx  分页及业务筛选条件，index为从零开始的页码，limit为每页条数
+	//	@i idx  分页及业务筛选条件，factor中bus_id必填、environment默认为prod，可按biz_id和job_id筛选；index从零开始，limit最多100
 	//	@o content  业务消息分页，包含BizId、JobId、BusId、接收对象回执集合、整体状态和计划及受理时间
 	// @MPI("gop.msgbus.index")
 	Index(ctx context.Context, idx *types.Paging) (*types.Page[*kinds.MessageRecord], error)
