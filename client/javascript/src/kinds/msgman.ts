@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
- * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates.
+ * SPDX-License-Identifier: Apache-2.0
  *
  *
  */
@@ -1234,6 +1234,12 @@ export class PushDevice {
      */
     @index(23, "update_by", String)
     public updateBy: string = "";
+    /**
+     * 设备注册通道ID
+     * 设备注册通道ID
+     */
+    @index(24, "channel_id", String)
+    public channelId: string = "";
 }
 
 export class PushDeviceRegistration {
@@ -1303,6 +1309,12 @@ export class PushDeviceRegistration {
      */
     @index(10, "sdk_version", String)
     public sdkVersion: string = "";
+    /**
+     * 设备注册通道ID
+     * 设备注册通道ID
+     */
+    @index(11, "channel_id", String)
+    public channelId: string = "";
 }
 
 export class PushSendRequest {

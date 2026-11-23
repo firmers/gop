@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
- * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates.
+ * SPDX-License-Identifier: Apache-2.0
  *
  *
  */
@@ -1063,7 +1063,12 @@ class PushDevice {
   @Index(index: 23, name: "update_by", pattern: "")
   String? updateBy;
 
-  PushDevice({this.id, this.appId, this.appName, this.platform, this.deviceId, this.userId, this.token, this.tokenHash, this.tags, this.attributes, this.locale, this.timezone, this.appVersion, this.sdkVersion, this.state, this.lastActiveAt, this.registerAt, this.unregisterAt, this.memo, this.status, this.createAt, this.updateAt, this.createBy, this.updateBy});
+  /// 设备注册通道ID
+  /// 设备注册通道ID
+  @Index(index: 24, name: "channel_id", pattern: "")
+  String? channelId;
+
+  PushDevice({this.id, this.appId, this.appName, this.platform, this.deviceId, this.userId, this.token, this.tokenHash, this.tags, this.attributes, this.locale, this.timezone, this.appVersion, this.sdkVersion, this.state, this.lastActiveAt, this.registerAt, this.unregisterAt, this.memo, this.status, this.createAt, this.updateAt, this.createBy, this.updateBy, this.channelId});
 }
 
 class PushDeviceRegistration {
@@ -1123,7 +1128,12 @@ class PushDeviceRegistration {
   @Index(index: 10, name: "sdk_version", pattern: "")
   String? sdkVersion;
 
-  PushDeviceRegistration({this.appId, this.platform, this.deviceId, this.userId, this.token, this.tags, this.attributes, this.locale, this.timezone, this.appVersion, this.sdkVersion});
+  /// 设备注册通道ID
+  /// 设备注册通道ID
+  @Index(index: 11, name: "channel_id", pattern: "")
+  String? channelId;
+
+  PushDeviceRegistration({this.appId, this.platform, this.deviceId, this.userId, this.token, this.tags, this.attributes, this.locale, this.timezone, this.appVersion, this.sdkVersion, this.channelId});
 }
 
 class PushSendRequest {

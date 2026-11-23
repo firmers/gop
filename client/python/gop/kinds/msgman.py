@@ -1,6 +1,6 @@
 #
-# Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
-# Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+# Copyright (c) 2019, 2025, firmer.tech and/or its affiliates.
+# SPDX-License-Identifier: Apache-2.0
 #
 #
 
@@ -1459,6 +1459,13 @@ class PushDevice:
         """
         return ""
 
+    @idx(index = 24, name = "channel_id")
+    def channel_id(self) -> str:
+        """
+        设备注册通道ID        设备注册通道ID
+        """
+        return ""
+
 
 
 @serializable
@@ -1538,6 +1545,13 @@ class PushDeviceRegistration:
     def sdk_version(self) -> str:
         """
         SDK版本        SDK版本
+        """
+        return ""
+
+    @idx(index = 11, name = "channel_id")
+    def channel_id(self) -> str:
+        """
+        设备注册通道ID        设备注册通道ID
         """
         return ""
 

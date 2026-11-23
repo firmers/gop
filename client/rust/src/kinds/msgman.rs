@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
- * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates.
+ * SPDX-License-Identifier: Apache-2.0
  *
  *
  */
@@ -870,6 +870,10 @@ pub struct PushDevice {
     /// 更新人
     #[index(value = 23, name = "update_by")]
     pub update_by: String,
+    /// 设备注册通道ID
+    /// 设备注册通道ID
+    #[index(value = 24, name = "channel_id")]
+    pub channel_id: String,
 }
 
 #[derive(Debug, Codec)]
@@ -919,6 +923,10 @@ pub struct PushDeviceRegistration {
     /// SDK版本
     #[index(value = 10, name = "sdk_version")]
     pub sdk_version: String,
+    /// 设备注册通道ID
+    /// 设备注册通道ID
+    #[index(value = 11, name = "channel_id")]
+    pub channel_id: String,
 }
 
 #[derive(Debug, Codec)]

@@ -266,6 +266,7 @@ type PushDevice struct {
 	UpdateAt     types.Time `index:"22" json:"update_at" xml:"update_at" yaml:"update_at" comment:"更新时间"`
 	CreateBy     string     `index:"23" json:"create_by" xml:"create_by" yaml:"create_by" comment:"创建人"`
 	UpdateBy     string     `index:"24" json:"update_by" xml:"update_by" yaml:"update_by" comment:"更新人"`
+	ChannelId    string     `index:"25" json:"channel_id,omitempty" xml:"channel_id" yaml:"channel_id" comment:"设备注册通道ID"`
 }
 
 type PushDeviceRegistration struct {
@@ -280,6 +281,7 @@ type PushDeviceRegistration struct {
 	Timezone   string `index:"9" json:"timezone" xml:"timezone" yaml:"timezone" comment:"时区"`
 	AppVersion string `index:"10" json:"app_version" xml:"app_version" yaml:"app_version" comment:"应用版本"`
 	SdkVersion string `index:"11" json:"sdk_version" xml:"sdk_version" yaml:"sdk_version" comment:"SDK版本"`
+	ChannelId  string `index:"12" json:"channel_id,omitempty" xml:"channel_id" yaml:"channel_id" comment:"设备注册通道ID"`
 }
 
 type PushSendRequest struct {

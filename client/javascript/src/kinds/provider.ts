@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates. All rights reserved.
- * Firmer Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * Copyright (c) 2019, 2025, firmer.tech and/or its affiliates.
+ * SPDX-License-Identifier: Apache-2.0
  *
  *
  */
@@ -90,6 +90,6 @@ export class PushProviderConfig {
      * 原生平台配置
      * 原生平台配置
      */
-    @index(7, "native", [Array, PushNativeCredential])
-    public native: PushNativeCredential[] = [];
+    @index(7, "native_settings", [Array, PushNativeCredential])
+    public nativeSettings: PushNativeCredential[] = [];
 }

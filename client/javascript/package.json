@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "description": "",
   "homepage": "gop",
-  "repository": "github.com/firmers/gop",
+  "repository": "git.firmer.tech/firmer/gop",
   "author": "coyzeng@gmail.com",
   "maintainers": [
     "coyzeng@gmail.com"
   ],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist"
